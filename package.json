@@ -1,0 +1,55 @@
+{
+  "name": "Todoer",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "npx react-native run-android",
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "test": "jest",
+    "lint": "eslint .",
+    "react-devtools": "react-devtools"
+  },
+  "dependencies": {
+    "@react-native-community/async-storage": "^1.6.3",
+    "@react-native-community/datetimepicker": "^2.1.0",
+    "date-fns": "^2.8.1",
+    "lodash.clone": "^4.5.0",
+    "react": "16.9.0",
+    "react-devtools": "^3",
+    "react-native": "^0.61.5",
+    "react-native-animatable": "^1.3.3",
+    "react-native-elements": "^1.2.7",
+    "react-native-fab": "^1.0.9",
+    "react-native-gesture-handler": "^1.5.0",
+    "react-native-modal": "^11.5.3",
+    "react-native-modal-dropdown": "^0.7.0",
+    "react-native-push-notification": "^3.1.9",
+    "react-native-reanimated": "^1.4.0",
+    "react-native-screens": "^2.0.0-alpha.11",
+    "react-native-typography": "^1.4.1",
+    "react-native-vector-icons": "^6.6.0",
+    "react-native-version-check": "^3.3.1",
+    "react-navigation": "^4.0.10",
+    "react-navigation-drawer": "^2.3.3",
+    "react-navigation-stack": "^1.10.3",
+    "react-navigation-tabs": "^2.5.6",
+    "react-redux": "^7.1.3",
+    "redux": "^4.0.4",
+    "redux-saga": "^1.1.3",
+    "uuid": "^3.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.2",
+    "@babel/runtime": "^7.7.2",
+    "@react-native-community/eslint-config": "^0.0.5",
+    "babel-jest": "^24.9.0",
+    "eslint": "^6.6.0",
+    "jest": "^24.9.0",
+    "metro-react-native-babel-preset": "^0.57.0",
+    "react-test-renderer": "16.9.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
