@@ -1,0 +1,4 @@
+export const SETTINGS = 'SETTINGS';
+export const NOTIFICATIONS = 'NOTIFICATIONS';
+export const DEFAULT_REMIND_INTERVAL_IN_MINUTES = 10;
+export const HEADER_HEIGHT = 60;
