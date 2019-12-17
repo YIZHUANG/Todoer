@@ -1,4 +1,4 @@
-import getTodoType from '../../utils/getTodoType';
+import getTodoType from 'utils/getTodoType';
 
 function replaceTodoWithNewOne(todos, oldTodo, newTodo) {
   const index = todos.findIndex(existingTodo => existingTodo.id === oldTodo.id);
@@ -15,7 +15,7 @@ export function getStateWhenMultipleTodosEdited(state, action) {
     ongoing: state.ongoing,
     due: state.due,
   };
-  (todos || []).forEach(todo => {
+  todos.forEach(todo => {
     const type = getTodoType(todo);
     if (todo) {
       allTodos[type] = [...allTodos[type], todo];

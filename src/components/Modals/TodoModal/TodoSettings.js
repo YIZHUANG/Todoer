@@ -1,10 +1,8 @@
 import React from 'react';
-import {View, Text} from 'react-native';
-import {Slider} from 'react-native-elements';
-import {iOSColors} from 'react-native-typography';
+import {View} from 'react-native';
 
 import SubHeading from '../../Typography/SubHeading';
-import useTheme from '../../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 import ButtonIcon, {buttonTypes} from '../../Buttons/ButtonIcon';
 import {RepeatTypes} from '../../../constants';
 
@@ -19,6 +17,7 @@ const RemindButton = ({
   showRemindDropdown,
 }) => {
   const remind = remindIntervalInMinutes && remindEnabled;
+  const theme = useTheme();
   function getRemindSelection() {
     if (dontRemind) {
       return "Don't remind";
@@ -34,7 +33,7 @@ const RemindButton = ({
     <ButtonIcon
       iconName="bell-outline"
       variant={buttonTypes.default}
-      iconColor={iOSColors.green}
+      iconColor={theme.green}
       active={remind}
       style={{
         marginRight: 30,
@@ -47,6 +46,7 @@ const RemindButton = ({
 
 // todos: support weekly.
 const RepeatEveryDayButton = ({repeat, onRepeat}) => {
+  const theme = useTheme();
   const isRepeating = repeat === RepeatTypes.DAILY;
   function onRepeatEveryday() {
     if (isRepeating) {
@@ -59,7 +59,7 @@ const RepeatEveryDayButton = ({repeat, onRepeat}) => {
     <ButtonIcon
       iconName={isRepeating ? 'check' : 'repeat'}
       variant={buttonTypes.default}
-      iconColor={isRepeating ? iOSColors.green : iOSColors.red}
+      iconColor={isRepeating ? theme.green : theme.red}
       title="Repeat everyday"
       active={isRepeating}
       onPress={onRepeatEveryday}

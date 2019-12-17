@@ -5,7 +5,7 @@ import {createDrawerNavigator} from 'react-navigation-drawer';
 import Home from './Home';
 import Completed from './Completed';
 import Settings from './Settings';
-import Drawer from '../components/Drawer';
+import Drawer from 'src/components/Drawer';
 
 const AppNavigator = createDrawerNavigator(
   {

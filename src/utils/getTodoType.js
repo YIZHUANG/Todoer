@@ -1,6 +1,6 @@
 import isPast from 'date-fns/isPast';
 import isToday from 'date-fns/isToday';
-import {TodoTypes, RepeatTypes} from '../constants';
+import {TodoTypes, RepeatTypes} from 'src/constants';
 
 function getTodoType(todo) {
   const {deadline, done} = todo;
@@ -16,7 +16,8 @@ function getTodoType(todo) {
   }
   return TodoTypes.ONGOING;
 }
-function isRepeatEveryDayTask(todo) {
+
+function shouldResetTodo(todo) {
   const {deadline, repeat} = todo;
   if (
     repeat === RepeatTypes.DAILY &&
@@ -27,5 +28,6 @@ function isRepeatEveryDayTask(todo) {
   }
   return false;
 }
-export {isRepeatEveryDayTask};
+
+export {shouldResetTodo};
 export default getTodoType;

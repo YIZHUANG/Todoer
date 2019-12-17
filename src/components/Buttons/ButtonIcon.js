@@ -1,8 +1,8 @@
 import React from 'react';
 import {Button, Icon} from 'react-native-elements';
-import {systemWeights, iOSColors} from 'react-native-typography';
+import {systemWeights} from 'react-native-typography';
 
-import useTheme from '../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 
 export const buttonTypes = {
   disable: 'disable',
@@ -15,7 +15,7 @@ const ButtonIcon = ({
   onPress,
   active,
   variant = buttonTypes.disable,
-  iconColor = iOSColors.blue,
+  iconColor,
   iconName = 'calendar-check-outline',
 }) => {
   const theme = useTheme();
@@ -23,11 +23,11 @@ const ButtonIcon = ({
   const isDefaultStyle = variant === buttonTypes.default;
 
   const iconStyle = {
-    color: active || isDefaultStyle ? iconColor : iOSColors.gray,
+    color: active || isDefaultStyle ? (iconColor || theme.blue) : theme.gray,
     ...(active || isDefaultStyle ? systemWeights.regular : systemWeights.light),
   };
   const titleStyle = {
-    color: active ? iOSColors.black : iOSColors.gray,
+    color: active ? theme.black : theme.gray,
     ...(active || isDefaultStyle ? systemWeights.regular : systemWeights.light),
   };
   return (
@@ -37,7 +37,7 @@ const ButtonIcon = ({
         ...style,
       }}
       buttonStyle={{
-        backgroundColor: iOSColors.customGray,
+        backgroundColor: theme.customGray,
         borderRadius: 10,
         padding: 10,
       }}

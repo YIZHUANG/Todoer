@@ -5,8 +5,8 @@ import {useSelector} from 'react-redux';
 import {Input} from 'react-native-elements';
 import {useDispatch} from 'react-redux';
 
-import {closeModal} from '../../../actions/modal';
-import useTheme from '../../../hooks/useTheme';
+import {closeModal} from 'actions/modal';
+import useTheme from 'hooks/useTheme';
 import DateTimePicker from '../../DateTimePicker';
 import DropdownModal from '../DropdownModal';
 import {
@@ -164,7 +164,7 @@ const createStyles = theme =>
         alignItems: 'flex-start',
         justifyContent: 'flex-start',
       }),
-      backgroundColor: theme.primary,
+      backgroundColor: theme.white,
       paddingTop: 20,
       position: 'relative',
     },

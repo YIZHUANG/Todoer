@@ -10,7 +10,9 @@ const editSettings = settings => {
     type: settingsEffectActionTypes.EDIT_SETTINGS,
     settings,
   };
-};export const settingsEffects = {
+};
+
+export const settingsEffects = {
   getSettings,
   editSettings,
 };

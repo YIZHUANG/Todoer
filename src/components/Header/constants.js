@@ -1,4 +1,4 @@
-import {iOSColors} from 'react-native-typography';
+import theme from 'src/styles/theme';
 
 const DEFAULT_ICON_SIZE = 28;
 const ICON_MRAGIN_LEFT = 15;
@@ -8,5 +8,5 @@ export const iconStyle = {
     marginRight: ICON_MRAGIN_LEFT,
   },
   size: DEFAULT_ICON_SIZE,
-  color: iOSColors.white,
+  color: theme.white,
 };

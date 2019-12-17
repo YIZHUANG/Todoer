@@ -1,7 +1,7 @@
 import React from 'react';
 import {View} from 'react-native';
 
-import useTheme from '../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 
 const Container = ({children, style}) => {
   const theme = useTheme();

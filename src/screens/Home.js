@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {ScrollView, Text} from 'react-native';
+import {ScrollView} from 'react-native';
 
-import Header from '../components/Header';
-import {todoEffects} from '../actions/todo';
-import TaskList from '../components/TaskList';
-import NoResults from '../components/NoResults';
+import Header from 'src/components/Header';
+import {todoEffects} from 'actions/todo';
+import TaskList from 'src/components/TaskList';
+import NoResults from 'src/components/NoResults';
+import EmptyTodos from 'src/components/EmptyTodos';
 
 const SearchResultView = ({allTodos, keyword}) => {
   let searchResults = [];
@@ -28,7 +29,9 @@ const SearchResultView = ({allTodos, keyword}) => {
 const DefaultView = ({hasTodosAtAll, dueTodos, ongoingTodos}) => {
   return (
     <>
-      {!hasTodosAtAll ? null : (
+      {!hasTodosAtAll ? (
+        <EmptyTodos />
+      ) : (
         <>
           {dueTodos.length ? (
             <TaskList todos={dueTodos} category="Due" />

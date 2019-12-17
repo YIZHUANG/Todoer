@@ -1,10 +1,10 @@
 import {takeLatest, fork, takeEvery} from 'redux-saga/effects';
 
-import {todoMutationTypes} from '../actions/todo';
+import {todoMutationTypes} from 'actions/todo';
 import notificationService, {
   notificationList,
-} from '../modules/notificationService';
-import {settingsMutationTypes} from '../actions/settings';
+} from 'modules/notificationService';
+import {settingsMutationTypes} from 'actions/settings';
 
 function setupInitialNotification(todos) {
   const {ongoing, due} = todos;

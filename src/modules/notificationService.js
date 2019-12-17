@@ -1,7 +1,7 @@
 import PushNotification from 'react-native-push-notification';
 import addMinutes from 'date-fns/addMinutes';
 
-import {minutesToMilliseconds} from '../utils/time';
+import {minutesToMilliseconds} from 'utils/time';
 
 export let notificationList = [];
 let index = 0;

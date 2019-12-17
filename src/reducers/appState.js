@@ -1,4 +1,4 @@
-import {SET_APP_STATE} from '../actions/appState';
+import {SET_APP_STATE} from 'actions/appState';
 
 const initialState = {
   isAppActive: false,

@@ -1,3 +1,4 @@
+import {iOSColors} from 'react-native-typography';
 import {
   flex,
   leftRightMargin,
@@ -7,13 +8,7 @@ import {
 } from './utilities';
 
 const theme = {
-  primary: '#fff',
-  secondary: '#f55242',
-  dark: 'black',
-  grey: 'rgba(0,0,0,.54)',
-  red: '#ec4c4c',
-  green: '#00e68a',
-
+  ...iOSColors,
   flex,
   leftRightMargin,
   topBottomMargin,

@@ -2,7 +2,7 @@ import {put, takeLatest} from 'redux-saga/effects';
 import {
   datePickerEffectActionTypes,
   datePickerMutationActions,
-} from '../actions/datePicker';
+} from 'actions/datePicker';
 
 function* setDateSaga(action) {
   yield put(datePickerMutationActions.closeDatePicker());

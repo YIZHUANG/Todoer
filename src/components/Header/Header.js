@@ -2,11 +2,10 @@ import React from 'react';
 import * as Animatable from 'react-native-animatable';
 import {View, Dimensions} from 'react-native';
 import {useSelector} from 'react-redux';
-import {iOSColors} from 'react-native-typography';
 
 import DrawerControl from './DrawerControl';
 import Search from './Search';
-import useTheme from '../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 import MultiSelect from './MultiSelect';
 import Caption from '../Typography/Caption';
 import BackArrow from '../Icons/BackArrow';
@@ -33,7 +32,7 @@ const Header = ({allTodos, hideSearch, title, showBackButton}) => {
   return (
     <View
       style={{
-        backgroundColor: iOSColors.red,
+        backgroundColor: theme.red,
         height: 60,
       }}>
       <View

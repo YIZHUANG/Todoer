@@ -1,3 +1,4 @@
+
 export const TodoTypes = {
   DUE: 'due',
   PAST: 'past',
@@ -5,6 +6,8 @@ export const TodoTypes = {
 };
 export const RepeatTypes = {
   DAILY: 'daily',
+  WEEKLY: 'weekly',
+  MONTHLY: 'monthly',
 };
 export const SETTINGS = 'SETTINGS';
 export const DEFAULT_REMIND_INTERVAL_IN_MINUTES = 10;

@@ -1,21 +1,15 @@
 // todos: Figure out GDPR thingy and add error catching.
 
 import AsyncStorage from '@react-native-community/async-storage';
-import uuidv4 from 'uuid/v4';
 
 import {SETTINGS} from '../constants';
-import parseMultiTodos from '../utils/parseMultiTodos';
+import todoModels from '../models';
+import parseMultiTodos from 'utils/parseMultiTodos';
 
-export async function addTodo(data) {
-  const id = uuidv4();
-  const savedToDoItem = {
-    id,
-    createdAt: new Date().toISOString(),
-    lastUpdated: new Date().toISOString(),
-    ...data,
-  };
-  await AsyncStorage.setItem(id, JSON.stringify(savedToDoItem));
-  return savedToDoItem;
+export async function addTodo(todo) {
+  const newTodo = todoModels.createTodo(todo);
+  await AsyncStorage.setItem(id, JSON.stringify(newTodo));
+  return newTodo;
 }
 
 export async function getAllTodos() {
@@ -32,9 +26,10 @@ export async function removeAllTodos() {
     await AsyncStorage.multiRemove(allKeys);
   } catch (e) {}
 }
+
 export async function editTodo(todo) {
   try {
-    const editedToDoItem = {...todo, lastUpdated: new Date().toISOString()};
+    const editedToDoItem = todoModels.editTodo(todo);
     await AsyncStorage.mergeItem(todo.id, JSON.stringify(editedToDoItem));
     return editedToDoItem;
   } catch (e) {}

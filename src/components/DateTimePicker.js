@@ -2,7 +2,7 @@ import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
 
 import Picker from '@react-native-community/datetimepicker';
-import {datePickerEffects} from '../actions/datePicker';
+import {datePickerEffects} from 'actions/datePicker';
 
 const DateTimePicker = () => {
   const {showDatePicker, showTimePicker, selectedDate} = useSelector(

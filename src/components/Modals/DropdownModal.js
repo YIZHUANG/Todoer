@@ -4,7 +4,7 @@ import Modal from 'react-native-modal';
 import {Text, Input} from 'react-native-elements';
 import {human} from 'react-native-typography';
 
-import useTheme from '../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 import {DEFAULT_REMIND_INTERVAL_IN_MINUTES} from '../../constants';
 import CircleCheckBox from '../CircleCheckBox';
 
@@ -49,13 +49,12 @@ const DropdownModal = ({
       }}>
       <View
         style={{
-          backgroundColor: theme.primary,
+          backgroundColor: theme.white,
           ...theme.flex({
             alignItems: 'flex-start',
-            paddingLeft: 30,
-            paddingRight: 30,
             flexDirection: 'column',
           }),
+          ...theme.leftRightPadding(30),
           borderRadius: 4,
           ...theme.topBottomPadding(20),
           borderColor: 'rgba(0, 0, 0, 0.1)',
@@ -83,7 +82,7 @@ const DropdownModal = ({
           <Input
             maxLength={4}
             inputStyle={{
-              color: theme.dark,
+              color: theme.black,
             }}
             containerStyle={{
               width: 70,

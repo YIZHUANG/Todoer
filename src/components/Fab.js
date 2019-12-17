@@ -1,12 +1,11 @@
 import React from 'react';
 import FloatingButton from 'react-native-fab';
-import {iOSColors} from 'react-native-typography';
 
 import {useDispatch} from 'react-redux';
-import {openModal} from '../actions/modal';
-import {todoEffects} from '../actions/todo';
+import {openModal} from 'actions/modal';
+import {todoEffects} from 'actions/todo';
 import TodoModal from './Modals/TodoModal/TodoModal';
-import useTheme from '../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 
 const Fab = () => {
   const dispatch = useDispatch();
@@ -19,8 +18,8 @@ const Fab = () => {
   }
   return (
     <FloatingButton
-      buttonColor={iOSColors.orange}
-      iconTextColor={theme.primary}
+      buttonColor={theme.orange}
+      iconTextColor={theme.white}
       onClickAction={showAddNewTodoModal}
       visible
     />

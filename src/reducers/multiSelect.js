@@ -3,9 +3,9 @@ import {
   MULTI_SELECT_CLEAR,
   SELECT_ALL,
   REMOVE_TODO_FROM_MULTI_SELECT,
-} from '../actions/multiSelect';
-import {todoMutationTypes} from '../actions/todo';
-import {OPEN_MODAL} from '../actions/modal';
+} from 'actions/multiSelect';
+import {todoMutationTypes} from 'actions/todo';
+import {OPEN_MODAL} from 'actions/modal';
 const initialState = {
   active: false,
   selectedTodos: [],

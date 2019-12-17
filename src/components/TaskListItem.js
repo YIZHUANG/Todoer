@@ -2,17 +2,17 @@ import React from 'react';
 import {useDispatch} from 'react-redux';
 import {TouchableOpacity, TouchableWithoutFeedback} from 'react-native';
 import {ListItem, Icon} from 'react-native-elements';
-import isFuture from 'date-fns/isFuture';
 
-import useTheme from '../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 import TodoModal from './Modals/TodoModal/TodoModal';
-import {todoEffects} from '../actions/todo';
-import {openModal} from '../actions/modal';
-import {multiSelect, removeFromMultiSelect} from '../actions/multiSelect';
-import {getDate, getFullDate} from '../utils/time';
+import {todoEffects} from 'actions/todo';
+import {openModal} from 'actions/modal';
+import {multiSelect, removeFromMultiSelect} from 'actions/multiSelect';
+import {getDate, getFullDate} from 'utils/time';
 import IconWithText from './Icons/IconWithText';
-import getIconColor from '../utils/getIconColor';
+import getIconColor from 'utils/getIconColor';
 import FootNote from './Typography/FootNote';
+import todoModels from '../models';
 
 const CheckIcon = ({onPress}) => {
   return (
@@ -48,16 +48,7 @@ const TaskListItem = ({todo, isMultiSelectEnable, isBeingSelected}) => {
     if (isBeingSelected) {
       dispatch(removeFromMultiSelect(todo));
     }
-    dispatch(
-      todoEffects.editTodo(
-        {
-          ...todo,
-          done: true,
-          completeDate: new Date(),
-        },
-        todo,
-      ),
-    );
+    dispatch(todoEffects.editTodo(todoModels.completedTodo(todo), todo));
   }
   function onBodyClick() {
     if (!isMultiSelectEnable) {

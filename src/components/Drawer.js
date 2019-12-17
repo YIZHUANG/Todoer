@@ -1,11 +1,11 @@
 import * as React from 'react';
 import {View, ScrollView, Text, SafeAreaView, StyleSheet} from 'react-native';
-import {iOSColors, human, systemWeights} from 'react-native-typography';
+import {human, systemWeights} from 'react-native-typography';
 import {ListItem, Divider} from 'react-native-elements';
 import {NavigationActions} from 'react-navigation';
 import {useSelector} from 'react-redux';
 
-import useTheme from '../hooks/useTheme';
+import useTheme from 'src/hooks/useTheme';
 
 const Drawer = ({navigation}) => {
   const theme = useTheme();
@@ -39,7 +39,7 @@ const Drawer = ({navigation}) => {
               name: 'inbox',
               type: 'material-community',
               iconStyle: {
-                color: iOSColors.blue,
+                color: theme.blue,
               },
             }}
             rightTitle={totalActiveTodos.toString()}
@@ -51,7 +51,7 @@ const Drawer = ({navigation}) => {
               name: 'calendar-multiple-check',
               type: 'material-community',
               iconStyle: {
-                color: iOSColors.green,
+                color: theme.green,
               },
             }}
             rightTitle={pastTodos.length.toString()}
@@ -81,18 +81,18 @@ const createStyles = theme =>
         alignItems: 'flex-start',
         paddingLeft: 20,
       }),
-      backgroundColor: iOSColors.red,
+      backgroundColor: theme.red,
       height: 60,
     },
     brand: {
       ...human.bodyWhiteObject,
-      ...systemWeights.bold
+      ...systemWeights.bold,
     },
     navigationList: {
       ...theme.topBottomPadding(10),
     },
     divider: {
-      backgroundColor: iOSColors.black,
+      backgroundColor: theme.black,
       height: 0.3,
     },
   });

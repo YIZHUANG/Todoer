@@ -1,6 +1,7 @@
 import isPast from 'date-fns/isPast';
-import {iOSColors} from 'react-native-typography';
 import isToday from 'date-fns/isToday';
+
+import theme from 'styles/theme';
 
 function byDeadline(todo) {
   const {deadline} = todo;
@@ -8,12 +9,12 @@ function byDeadline(todo) {
     return '';
   }
   if (isPast(new Date(deadline))) {
-    return iOSColors.red;
+    return theme.red;
   }
   if (isToday(new Date(deadline))) {
-    return iOSColors.blue;
+    return theme.blue;
   }
-  return iOSColors.green;
+  return theme.green;
 }
 
 export default {byDeadline};

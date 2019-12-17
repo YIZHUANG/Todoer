@@ -8,8 +8,8 @@ import isTomorrow from 'date-fns/isTomorrow';
 import format from 'date-fns/format';
 
 import ButtonIcon from '../../Buttons/ButtonIcon';
-import useTheme from '../../../hooks/useTheme';
-import {datePickerMutationActions} from '../../../actions/datePicker';
+import useTheme from 'hooks/useTheme';
+import {datePickerMutationActions} from 'actions/datePicker';
 
 const DateSelectors = ({selectedTodo}) => {
   const theme = useTheme();

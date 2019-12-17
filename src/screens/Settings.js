@@ -8,17 +8,17 @@ import {
 } from 'react-native';
 import {ListItem} from 'react-native-elements';
 import {useDispatch} from 'react-redux';
-import {iOSColors} from 'react-native-typography';
 import VersionCheck from 'react-native-version-check';
 
-import useTheme from '../hooks/useTheme';
-import Header from '../components/Header';
-import SubHeading from '../components/Typography/SubHeading';
-import {todoEffects} from '../actions/todo';
+import useTheme from 'hooks/useTheme';
+import Header from 'src/components/Header';
+import SubHeading from 'src/components/Typography/SubHeading';
+import {todoEffects} from 'actions/todo';
 
 const noop = () => {};
 const ContainerWithPressStatus = props => {
-  return <TouchableHighlight {...props} underlayColor={iOSColors.lightGray} />;
+  const theme = useTheme();
+  return <TouchableHighlight {...props} underlayColor={theme.lightGray} />;
 };
 
 const SettingItem = props => {
@@ -46,7 +46,7 @@ const SettingHeading = ({text}) => {
         marginTop: 10,
         marginBottom: 0,
         ...theme.leftRightPadding(20),
-        color: iOSColors.orange,
+        color: theme.orange,
         fontSize: 17,
       }}
       text={text}

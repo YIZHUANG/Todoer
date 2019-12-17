@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {Icon} from 'react-native-elements';
-import {iOSColors, systemWeights} from 'react-native-typography';
+import {systemWeights} from 'react-native-typography';
 
 import FootNote from '../Typography/FootNote';
-import useTheme from '../../hooks/useTheme';
+import useTheme from 'hooks/useTheme';
 
 const IconWithText = ({iconName, iconColor, children}) => {
   const theme = useTheme();
@@ -27,7 +27,7 @@ const IconWithText = ({iconName, iconColor, children}) => {
       <FootNote
         style={{
           ...systemWeights.light,
-          color: iOSColors.grey,
+          color: theme.grey,
         }}>
         {children}
       </FootNote>

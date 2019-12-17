@@ -3,9 +3,9 @@ import {View} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {Icon} from 'react-native-elements';
 
-import useTheme from '../../hooks/useTheme';
-import {selectAll, clearMultiSelect} from '../../actions/multiSelect';
-import {todoEffects} from '../../actions/todo';
+import useTheme from 'hooks/useTheme';
+import {selectAll, clearMultiSelect} from 'actions/multiSelect';
+import {todoEffects} from 'actions/todo';
 import {iconStyle} from './constants';
 import Body, {bodyTypes} from '../Typography/Body';
 

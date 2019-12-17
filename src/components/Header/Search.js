@@ -3,8 +3,8 @@ import {TouchableWithoutFeedback} from 'react-native';
 import {Icon, SearchBar} from 'react-native-elements';
 import {useDispatch, useSelector} from 'react-redux';
 
-import {toggleSearch, onSearch} from '../../actions/search';
-import useTheme from '../../hooks/useTheme';
+import {toggleSearch, onSearch} from 'actions/search';
+import useTheme from 'hooks/useTheme';
 import BackArrow from '../Icons/BackArrow';
 
 const Search = () => {
@@ -55,7 +55,7 @@ const Search = () => {
       <Icon
         Component={TouchableWithoutFeedback}
         onPress={() => dispatch(toggleSearch())}
-        color={theme.primary}
+        color={theme.white}
         type="material"
         name="search"
       />
@@ -67,7 +67,7 @@ const Search = () => {
       {...style}
       ref={ref}
       inputStyle={{
-        color: theme.dark,
+        color: theme.black,
       }}
       searchIcon={<SearchIcon />}
       value={keyword}

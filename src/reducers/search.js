@@ -3,7 +3,7 @@ import {
   CLOSE_SEARCH,
   TOGGLE_SEARCH,
   ON_SEARCH,
-} from '../actions/search';
+} from 'actions/search';
 
 const initialState = {
   active: false,

@@ -1,5 +1,5 @@
-import {datePickerMutationTypes} from '../actions/datePicker';
-import {CLOSE_MODAL} from '../actions/modal';
+import {datePickerMutationTypes} from 'actions/datePicker';
+import {CLOSE_MODAL} from 'actions/modal';
 
 const initialState = {
   showDatePicker: false,
@@ -40,8 +40,7 @@ const reducer = (state = initialState, action) => {
         showTimePicker: false,
       };
     }
-    case CLOSE_MODAL:
-    case datePickerMutationTypes.CLOSE_MODAL: {
+    case CLOSE_MODAL: {
       return initialState;
     }
     default:

@@ -1,5 +1,5 @@
-import {todoMutationTypes} from '../../actions/todo';
-import getTodoType from '../../utils/getTodoType';
+import {todoMutationTypes} from 'actions/todo';
+import getTodoType from 'utils/getTodoType';
 import {
   getStateWhenMultipleTodosEdited,
   getStateWhenSingleTodoEdtied,

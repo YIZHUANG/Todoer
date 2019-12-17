@@ -1,8 +1,10 @@
 import React from 'react';
 import {CheckBox} from 'react-native-elements';
-import {iOSColors} from 'react-native-typography';
+
+import useTheme from 'hooks/useTheme';
 
 const CircleCheckBox = ({onPress, checked, style = {}}) => {
+  const theme = useTheme();
   return (
     <CheckBox
       onPress={onPress}
@@ -12,7 +14,7 @@ const CircleCheckBox = ({onPress, checked, style = {}}) => {
         padding: 0,
         ...style,
       }}
-      checkedColor={iOSColors.blue}
+      checkedColor={theme.blue}
       checkedIcon="dot-circle-o"
       uncheckedIcon="circle-o"
       checked={checked}

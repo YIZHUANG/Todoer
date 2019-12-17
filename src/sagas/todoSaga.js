@@ -17,10 +17,10 @@ import {
   removeTodo,
   removeAllTodos,
 } from '../api/todo';
-import {todoEffectActionTypes, todoMutationActions} from '../actions/todo';
-import {clearMultiSelect} from '../actions/multiSelect';
-import {closeModal} from '../actions/modal';
-import omit from '../utils/omit';
+import {todoEffectActionTypes, todoMutationActions} from 'actions/todo';
+import {clearMultiSelect} from 'actions/multiSelect';
+import {closeModal} from 'actions/modal';
+import omit from 'utils/omit';
 
 function* addNewTodoSaga(action) {
   const newTodo = yield call(addTodo, action.data);
@@ -36,7 +36,7 @@ function* updateTodoSaga(action) {
   }
 }
 
-function* resetEveryDayTaskSaga(todos) {
+function* resetTodosSaga(todos) {
   const resetedTodos = [];
   const resetedTodosWithKeyValue = [];
   todos.forEach(todo => {
@@ -57,9 +57,9 @@ function* resetEveryDayTaskSaga(todos) {
 
 function* getAllTodosSaga() {
   const allTodos = yield call(getAllTodos);
-  const {repeatEveryDay} = allTodos;
-  if (repeatEveryDay.length) {
-    yield fork(resetEveryDayTaskSaga, repeatEveryDay);
+  const {todosNeededReset} = allTodos;
+  if (todosNeededReset.length) {
+    yield fork(resetTodosSaga, todosNeededReset);
   }
   yield put(
     todoMutationActions.setAllTodos(omit(allTodos, ['repeatEveryDay'])),
