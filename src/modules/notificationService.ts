@@ -4,16 +4,14 @@ import addMinutes from 'date-fns/addMinutes';
 import {minutesToMilliseconds} from 'utils/time';
 import models from 'src/models';
 import {getNotificationStartIndex} from 'utils/notification';
-import {Notifications, Todo} from 'src/types';
+import {Notifications, Todo, Notification} from 'src/types';
 
 class NotificationService {
   notifications = [];
   index = 0;
   configure() {
     PushNotification.configure({
-      onNotification: function() {
-        // console.log('NOTIFICATION:', notification);
-      },
+      onNotification: _ => {},
       popInitialNotification: false,
       requestPermissions: true,
     });
@@ -22,6 +20,9 @@ class NotificationService {
     this.notifications = notifications.sort(
       (a, b) => a.notificationId - b.notificationId,
     );
+    this.notifications.forEach(notification => {
+      this.resetNotification(notification);
+    });
     this.index = getNotificationStartIndex(this.notifications);
   }
   cancelAllNotifications() {
@@ -34,6 +35,16 @@ class NotificationService {
     PushNotification.cancelLocalNotifications({id: JSON.stringify(id)});
     this.notifications = this.notifications.filter(
       notification => notification.notificationId !== id,
+    );
+  }
+  resetNotification(notification: Notification) {
+    const {notificationId, text, remindIntervalInMinutes} = notification;
+    PushNotification.localNotificationSchedule(
+      this.getNotificationTemplate(
+        notificationId,
+        text,
+        remindIntervalInMinutes,
+      ),
     );
   }
   queueNotification(todo: Todo) {
@@ -69,7 +80,7 @@ class NotificationService {
       message: text,
       repeatType: 'time',
       repeatTime: minutesToMilliseconds(remindIntervalInMinutes),
-      actions: '["Ok"]',
+      // actions: '["Ok"]',
     };
   }
 }

@@ -31,6 +31,9 @@ const RemindDropdownModal = ({
     closeRemindDropdown();
   }
   function onChangeRemindInterval(value: string) {
+    if (value && !value.match('^[0-9|.]+$')) {
+      return;
+    }
     setRemindInterval(value);
     changeRemindInterval(value);
   }
